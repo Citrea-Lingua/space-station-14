@@ -63,3 +63,12 @@
   color: "#39c675"
   requiredComponents:
   - Cluwne
+
+- type: collectiveMind
+  id: Clockwork
+  name: collective-mind-ratvar
+  keycode: 'x'
+  color: "#DCD87C"
+  requiredComponents:
+  - ClockworkMind
+  
