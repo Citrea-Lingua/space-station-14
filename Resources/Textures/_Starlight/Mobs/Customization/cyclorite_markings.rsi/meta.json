@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "Custom",
+  "copyright": "ENTER YOUR NAME HERE PLEASE, THESE ARE YOURS AFTER ALL",
+    "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "testEyepatch",
+      "directions": 4
+    }
+  ]
+}

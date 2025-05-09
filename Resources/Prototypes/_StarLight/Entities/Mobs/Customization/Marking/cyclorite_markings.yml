@@ -1,0 +1,13 @@
+- type: marking
+  id: CycloriteTest
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Cyclorite]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/cyclorite_markings.rsi
+    state: testEyepatch
