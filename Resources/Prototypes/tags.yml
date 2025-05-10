@@ -141,6 +141,15 @@
   id: BorgModuleSyndicateAssault
 
 - type: Tag
+  id: IndustrialMechPilot
+
+- type: Tag
+  id: CombatMechPilot
+
+- type: Tag
+  id: SpecialMechPilot
+
+- type: Tag
   id: Bot
 
 - type: Tag
