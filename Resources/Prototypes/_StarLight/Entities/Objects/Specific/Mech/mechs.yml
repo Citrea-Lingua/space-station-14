@@ -6,6 +6,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - IndustrialMechPilot
         
@@ -16,6 +18,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - IndustrialMechPilot
 
@@ -27,6 +31,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - IndustrialMechPilot
       
@@ -37,6 +43,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - IndustrialMechPilot
 
@@ -48,6 +56,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
       
@@ -58,6 +68,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
       
@@ -68,6 +80,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
 
@@ -79,6 +93,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - IndustrialMechPilot
       
@@ -89,6 +105,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - IndustrialMechPilot
 
@@ -100,6 +118,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - SpecialMechPilot
       
@@ -110,6 +130,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - SpecialMechPilot
       
@@ -120,6 +142,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - SpecialMechPilot
 
@@ -131,6 +155,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
       
@@ -141,6 +167,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
 
@@ -152,6 +180,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
       
@@ -162,6 +192,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
 
@@ -173,6 +205,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
       
@@ -183,16 +217,57 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
       
 - type: entity
   id: MechMarauderBorgPilotFilled
   parent: MechMarauderFilled
+  suffix: Borg-Pilotable, Filled
+  components:
+  - type: Mech
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+      tags:
+        - CombatMechPilot
+
+# Seraph
+- type: entity
+  id: MechSeraphBorgPilot
+  parent: MechSeraph
+  suffix: Borg-Pilotable
+  components:
+  - type: Mech
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+      tags:
+        - CombatMechPilot
+      
+- type: entity
+  id: MechSeraphBorgPilotBattery
+  parent: MechSeraphBattery
   suffix: Borg-Pilotable, Battery, Air
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
+      tags:
+        - CombatMechPilot
+      
+- type: entity
+  id: MechSeraphBorgPilotFilled
+  parent: MechSeraphFilled
+  suffix: Borg-Pilotable, Filled
+  components:
+  - type: Mech
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
 
@@ -204,6 +279,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
       
@@ -214,51 +291,24 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
       
 - type: entity
   id: MechGygaxSyndieBorgPilotFilled
   parent: MechGygaxSyndieFilled
-  suffix: Borg-Pilotable, Battery, Air
+  suffix: Borg-Pilotable, Filled
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
 
-# GygaxSyndie
-- type: entity
-  id: MechGygaxSyndieBorgPilot
-  parent: MechGygaxSyndie
-  suffix: Borg-Pilotable
-  components:
-  - type: Mech
-    pilotWhitelist:
-      tags:
-        - CombatMechPilot
-      
-- type: entity
-  id: MechGygaxSyndieBorgPilotBattery
-  parent: MechGygaxSyndieBattery
-  suffix: Borg-Pilotable, Battery, Air
-  components:
-  - type: Mech
-    pilotWhitelist:
-      tags:
-        - CombatMechPilot
-      
-- type: entity
-  id: MechGygaxSyndieBorgPilotFilled
-  parent: MechGygaxSyndieFilled
-  suffix: Borg-Pilotable, Battery, Air
-  components:
-  - type: Mech
-    pilotWhitelist:
-      tags:
-        - CombatMechPilot
-
-# MaulerSyndie
+# Mauler
 - type: entity
   id: MechMaulerSyndieBorgPilot
   parent: MechMaulerSyndie
@@ -266,6 +316,8 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
       
@@ -276,15 +328,19 @@
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
       
 - type: entity
   id: MechMaulerSyndieBorgPilotFilled
   parent: MechMaulerSyndieFilled
-  suffix: Borg-Pilotable, Battery, Air
+  suffix: Borg-Pilotable, Filled
   components:
   - type: Mech
     pilotWhitelist:
+      components:
+        - HumanoidAppearance
       tags:
         - CombatMechPilot
