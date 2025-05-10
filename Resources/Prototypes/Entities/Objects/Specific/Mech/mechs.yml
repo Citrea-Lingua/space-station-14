@@ -206,8 +206,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-      tags:
-        - IndustrialMechPilot
     hidden: true
     attackRate: 1
     damage:
@@ -263,8 +261,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-      tags:
-        - IndustrialMechPilot
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -324,8 +320,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-      tags:
-        - CombatMechPilot
     siren: true
   - type: MeleeWeapon
     hidden: true
@@ -391,8 +385,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-      tags:
-        - IndustrialMechPilot
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -450,8 +442,6 @@
     pilotWhitelist:
       components:
       - HumanoidAppearance
-      tags:
-        - SpecialMechPilot
 
 - type: entity
   parent: MechHonker
@@ -622,8 +612,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-      tags:
-        - CombatMechPilot
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -680,8 +668,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-      tags:
-        - CombatMechPilot
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -747,8 +733,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-      tags:
-        - CombatMechPilot
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -818,8 +802,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-      tags:
-        - CombatMechPilot
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -892,8 +874,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-      tags:
-        - CombatMechPilot
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -969,8 +949,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-      tags:
-        - CombatMechPilot
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
