@@ -1,4 +1,4 @@
-# Ripley
+# Ripley Mk I
 - type: entity
   id: MechRipleyBorgPilotable
   parent: MechRipley
@@ -22,7 +22,7 @@
 # Ripley Mk II
 - type: entity
   id: MechRipley2BorgPilotable
-  parent: MechRipley
+  parent: MechRipley2
   suffix: Borg-Pilotable
   components:
   - type: Mech
