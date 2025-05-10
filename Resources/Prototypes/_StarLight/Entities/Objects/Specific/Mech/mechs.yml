@@ -76,7 +76,7 @@
 - type: entity
   id: MechPaddyBorgPilotFilled
   parent: MechPaddyFilled
-  suffix: Borg-Pilotable, Battery, Air
+  suffix: Borg-Pilotable, Filled
   components:
   - type: Mech
     pilotWhitelist:
@@ -138,7 +138,7 @@
 - type: entity
   id: MechHonkerBorgPilotFilled
   parent: MechHonkerFilled
-  suffix: Borg-Pilotable, Battery, Air
+  suffix: Borg-Pilotable, Filled
   components:
   - type: Mech
     pilotWhitelist:
