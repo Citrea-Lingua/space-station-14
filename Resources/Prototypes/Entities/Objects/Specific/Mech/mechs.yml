@@ -206,6 +206,7 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
+  - type: MeleeWeapon
     hidden: true
     attackRate: 1
     damage:
