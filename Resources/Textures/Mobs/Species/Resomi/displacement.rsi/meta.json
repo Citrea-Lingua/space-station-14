@@ -61,6 +61,10 @@
         {
             "name": "outerClothing",
             "directions": 4
+        },
+        {
+            "name": "rArm",
+            "directions": 4
         }
     ]
 }

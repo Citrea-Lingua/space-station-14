@@ -8,6 +8,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Content.Shared.DisplacementMap;
 
 namespace Content.Shared.Humanoid;
 
@@ -110,6 +111,9 @@ public sealed partial class HumanoidAppearanceComponent : Component
     };
     [DataField("voice", customTypeSerializer: typeof(PrototypeIdSerializer<VoicePrototype>))]
     public string? Voice { get; set; }
+
+    [DataField]
+    public Dictionary<string, DisplacementData> Displacements = new();
 }
 
 [DataDefinition]

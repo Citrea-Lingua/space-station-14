@@ -8,6 +8,8 @@ using Robust.Client.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Client.DisplacementMap;
+using System.Linq;
 
 namespace Content.Client.Humanoid;
 
@@ -16,6 +18,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly DisplacementMapSystem _displacement = default!;
 
     public override void Initialize()
     {
@@ -70,15 +73,27 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         foreach (var (key, info) in component.CustomBaseLayers)
         {
             oldLayers.Remove(key);
+            
+            int index = sprite.LayerMapGet(key);
             SetLayerData(component, sprite, key, info.Id, sexMorph: false, color: info.Color);
+
+            //remove previous displacements to avoid crashing
+            //TODO: Find out if this can be avoided somehow?
+            if(sprite.LayerExists($"{key}-displacement"))
+                sprite.RemoveLayer($"{key}-displacement");
+            if(component.Displacements.TryGetValue(key.ToString(), out var displacement))
+                _displacement.TryAddDisplacement(displacement, sprite, index, key.ToString(), sprite.LayerMap.ToHashSet().Select(l => l.Value.ToString()).Distinct().ToHashSet());
         }
 
         // hide old layers
         // TODO maybe just remove them altogether?
         foreach (var key in oldLayers)
         {
-            if (sprite.LayerMapTryGet(key, out var index))
-                sprite[index].Visible = false;
+            if (sprite.LayerExists(key))
+                sprite.RemoveLayer(key);
+            //Also clean up old displacements
+            if(sprite.LayerExists($"{key}-displacement"))
+                sprite.RemoveLayer($"{key}-displacement");
         }
     }
 
