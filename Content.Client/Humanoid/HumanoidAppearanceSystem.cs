@@ -87,7 +87,13 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         foreach (var (key, info) in component.CustomBaseLayers)
         {
             oldLayers.Remove(key);
+
             SetLayerData(entity, key, info.Id, sexMorph: false, color: info.Color);
+            _sprite.LayerMapTryGet((entity, sprite), key, out int index, false);
+            if (component.MarkingsDisplacement.TryGetValue(key, out var displacementData))
+            {
+				_displacement.TryAddDisplacement(displacementData, (entity, sprite), index, key, out _);
+            }
         }
 
         // hide old layers

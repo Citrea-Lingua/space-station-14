@@ -32,6 +32,12 @@
     alternateState: Resomi_burning
   - type: HumanoidAppearance
     species: Resomi
+    markingsDisplacement:
+      RArm:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Resomi/displacement.rsi
+            state: rArm
   - type: Fixtures
     fixtures: 
       fix1:
