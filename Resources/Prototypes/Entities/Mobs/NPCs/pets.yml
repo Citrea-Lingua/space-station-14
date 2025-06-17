@@ -641,6 +641,8 @@
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: shiva
       sprite: Mobs/Pets/shiva.rsi
+  - type: Arachnophobia
+    sprite: _Starlight/Mobs/Pets/shiva_slime.rsi
   - type: SpriteMovement
     movementLayers:
       movement:

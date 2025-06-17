@@ -1,0 +1,64 @@
+
+
+using Content.Shared._Starlight.Accessibility;
+using Content.Shared.CCVar;
+
+namespace Content.Client._Starlight.Accessibility;
+
+public sealed class ArachnophobiaSystem : EntitySystem
+{
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<ArachnophobiaComponent, AfterAutoHandleStateEvent>(OnHandleState);
+        Subs.CVar(_configurationManager, CCVars.AccessibilityArachnophobia, OnCvarChanged, true);
+        Subs.CVar(_configurationManager, CCVars.AccessibilityArachnophobia, OnCvarChanged, true);
+    }
+
+    private void OnHandleState(EntityUid uid, HumanoidAppearanceComponent component, ref AfterAutoHandleStateEvent args)
+    {
+        UpdateSprite((uid, component, Comp<SpriteComponent>(uid)));
+    }
+
+    private void OnCvarChanged(bool value)
+    {
+        var humanoidQuery = EntityManager.AllEntityQueryEnumerator<HumanoidAppearanceComponent, SpriteComponent>();
+        while (humanoidQuery.MoveNext(out var uid, out var humanoidComp, out var spriteComp))
+        {
+            UpdateSprite((uid, humanoidComp, spriteComp));
+        }
+    }
+
+    private void UpdateSprite(Entity<HumanoidAppearanceComponent, SpriteComponent> entity)
+    {
+
+		Logger.Log(LogLevel.Debug, filename);
+		if(_configurationManager.GetCVar(CCVars.AccessibilityArachnophobia))
+		{
+			Logger.Log(LogLevel.Debug, _configurationManager.GetCVar(CCVars.AccessibilityArachnophobia).ToString());
+			if(_entManager.TryGetComponent(queued.Entity, out ArachnophobiaAlternateSpriteComponent? arachnophobiaComponent))
+			{
+				Logger.Log(LogLevel.Debug, arachnophobiaComponent.rsi??"");
+			}
+		}
+        UpdateLayers(entity);
+        ApplyMarkingSet(entity);
+
+        var humanoidAppearance = entity.Comp1;
+        var sprite = entity.Comp2;
+
+        sprite[_sprite.LayerMapReserve((entity.Owner, sprite), HumanoidVisualLayers.Eyes)].Color = humanoidAppearance.EyeColor;
+        //starlight start
+        if (humanoidAppearance.EyeGlowing)
+            sprite.LayerSetShader(HumanoidVisualLayers.Eyes, "unshaded");
+        else 
+            if(_sprite.LayerMapTryGet((entity.Owner, sprite), HumanoidVisualLayers.Eyes, out var layerIndex, true))
+                sprite.LayerSetShader(layerIndex, (ShaderInstance?)null);
+        //starlight end
+    }
+}

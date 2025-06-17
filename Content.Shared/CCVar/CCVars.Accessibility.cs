@@ -73,4 +73,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> AccessibilityServerCensorNudity =
             CVarDef.Create("accessibility.server_censor_nudity", false, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
+
+    /// <summary>
+    /// If enabled, censors spiders by replacing them with slimes.
+    /// </summary>
+    public static readonly CVarDef<bool> AccessibilityArachnophobia =
+            CVarDef.Create("accessibility.arachnophobia", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 }
