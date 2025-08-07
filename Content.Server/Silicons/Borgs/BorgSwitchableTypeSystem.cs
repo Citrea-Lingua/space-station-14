@@ -44,6 +44,18 @@ public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
         if (TryComp(ent, out BorgChassisComponent? chassis))
         {
             var chassisEnt = (ent.Owner, chassis);
+
+            // Starlight start
+            // Add permanent items
+            if (prototype.ChassisItems.Length > 0)
+            {
+                foreach (var item in prototype.ChassisItems) 
+                {
+                    _borgSystem.AddChassisItem(chassisEnt.Owner, Spawn(item), chassis);
+                }
+            }
+            // Starlight end
+
             _borgSystem.SetMaxModules(
                 chassisEnt,
                 prototype.ExtraModuleCount + prototype.DefaultModules.Length);

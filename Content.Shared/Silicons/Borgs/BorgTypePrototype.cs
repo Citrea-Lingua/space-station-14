@@ -151,4 +151,12 @@ public sealed partial class BorgTypePrototype : IPrototype
     /// </summary>
     [DataField]
     public SoundSpecifier FootstepCollection { get; set; } = new SoundCollectionSpecifier(DefaultFootsteps);
+
+#region Starlight
+    /// <summary>
+    /// Items that are always available to borgs of this type.
+    /// </summary>
+    [DataField]
+    public EntProtoId[] ChassisItems = [];
+#endregion Starlight
 }

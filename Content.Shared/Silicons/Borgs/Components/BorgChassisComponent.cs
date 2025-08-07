@@ -60,6 +60,13 @@ public sealed partial class BorgChassisComponent : Component
     #endregion
 
     /// <summary>
+    /// 🌟Starlight🌟
+    /// Permanent Items attached to this chassis.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public List<EntityUid> ChassisItemEntities = [];
+
+    /// <summary>
     /// The currently selected module
     /// </summary>
     [DataField("selectedModule"), AutoNetworkedField]

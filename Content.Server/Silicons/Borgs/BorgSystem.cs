@@ -6,13 +6,16 @@ using Content.Server.Administration.Managers;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Hands.Systems;
+using Content.Server.Power.EntitySystems;
 using Content.Server.PowerCell;
 using Content.Server.Radio.Components;
 using Content.Shared.Alert;
 using Content.Shared.Body.Events;
 using Content.Shared.Database;
+using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -283,9 +286,15 @@ public sealed partial class BorgSystem : SharedBorgSystem
     {
         var (uid, comp) = ent;
         if (args.Activated)
+        {
+            EnableAllChassisItems(uid, comp); // 🌟Starlight🌟
             InstallAllModules(uid, comp);
+        }
         else
+        {
             DisableAllModules(uid, comp);
+            DisableAllChassisItems(uid, comp); // 🌟Starlight🌟
+        }
 
         // only enable the powerdraw if there is a player in the chassis
         var drawing = _mind.TryGetMind(uid, out _, out _) && _mobState.IsAlive(ent);
@@ -406,4 +415,45 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
         return true;
     }
+
+    #region Starlight
+    public void AddChassisItem(EntityUid uid, EntityUid item, BorgChassisComponent? component = null)
+    { 
+        if (!Resolve(uid, ref component))
+            return;
+
+        component.ChassisItemEntities.Add(item);
+    }
+
+    public void EnableAllChassisItems(EntityUid uid, BorgChassisComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        foreach (var item in component.ChassisItemEntities)
+        {
+            var handId = $"{uid}_{item}";
+            var hands = EnsureComp<HandsComponent>(uid);
+            _hands.AddHand((uid, hands), handId, HandLocation.Middle);
+            _hands.DoPickup(uid, handId, item, hands);
+            EnsureComp<UnremoveableComponent>(item);
+        }            
+}
+
+    public void DisableAllChassisItems(EntityUid uid, BorgChassisComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        var container = _container.EnsureContainer<Container>(uid, "borgitems", out _);
+        foreach (var item in component.ChassisItemEntities)
+        {
+            var handId = $"{uid}_{item}";
+            RemComp<UnremoveableComponent>(item);
+            var hands = EnsureComp<HandsComponent>(uid);
+            _container.Insert(item, container, force: true);
+            _hands.RemoveHand(uid, handId);
+        }
+    }
+    #endregion Starlight
 }

@@ -173,6 +173,10 @@
     damageContainers:
     - Biological
 
+  # 🌟Starlight🌟
+  chassisItems:
+    - HandheldHealthAnalyzerUnpowered
+
   # Visual
   inventoryTemplateId: borgDutch
   spriteBodyState: medical
