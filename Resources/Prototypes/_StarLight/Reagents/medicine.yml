@@ -67,7 +67,7 @@
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Avali, Resomi ]
+          type: [ Avali, Resomi, Plant ]
           inverted: true
         damage:
           types:

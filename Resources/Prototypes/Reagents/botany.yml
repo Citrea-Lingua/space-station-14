@@ -16,6 +16,15 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [Plant]
+      - !type:HealthChange #Starlight
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Plant ]
+        damage:
+          groups:
+            Brute: -0.5
+          types:
+            Caustic: -1
 
 - type: reagent
   id: Left4Zed
@@ -47,6 +56,17 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [Plant]
+      - !type:HealthChange #Starlight
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Plant ]
+        damage:
+          types:
+            Cellular: 0.5
+          groups:
+            Toxin: -4
+            Burn: -2
+            Brute: -2
 
 - type: reagent
   id: PestKiller
@@ -70,7 +90,7 @@
             Poison: 3
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [Plant]
+          type: [Plant, Diona] #Starlight
 
 - type: reagent
   id: PlantBGone
@@ -92,16 +112,16 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:HealthChange
+      - !type:HealthChange #Starlight
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Plant ]
         damage:
           types:
-            Poison: -4
+            Poison: 4
             Blunt: 2
             Slash: 1
             Piercing: 1
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [Plant]
 
 - type: reagent
   id: RobustHarvest
@@ -156,6 +176,12 @@
           - !type:ReagentCondition
             reagent: RobustHarvest
             min: 80
+      - !type:EvenHealthChange #Starlight
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Plant ]
+        damage:
+          Brute: -2
 
 - type: reagent
   id: Sedin
@@ -172,6 +198,20 @@
       probability: 0.20
     - !type:PlantAdjustPotency
       amount: -3 # Match this with current rate of Robust Harvest potency increase
+  metabolisms:
+    Medicine: #Starlight
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Plant ]
+        damage:
+          types:
+            Cellular: 0.5
+          groups:
+            Toxin: -4
+            Burn: -2
+            Brute: -2
 
 - type: reagent
   id: WeedKiller
@@ -196,6 +236,12 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [Plant]
+    Medicine: #Starlight
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 4 # Weed killer really should just be poisonous to *everyone*
 
 - type: reagent
   id: Ammonia
@@ -218,7 +264,7 @@
       - !type:HealthChange
         conditions: #Starlight
         - !type:MetabolizerTypeCondition
-          type: [ Avali, Resomi ]
+          type: [ Avali, Resomi, Diona ]
           inverted: true
         damage:
           types:
@@ -232,12 +278,20 @@
         damage:
           types:
             Asphyxiation: -1
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Plant ]
+        damage:
+          types:
+            Heat: -1
+            Cold: -1
     Gas:
       effects:
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Rat ]
+          type: [ Rat, Diona ] #Starlight
           inverted: true
         - !type:ReagentCondition
           reagent: Ammonia
@@ -250,7 +304,7 @@
         probability: 0.12
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Rat, Vox ]
+          type: [ Rat, Vox, Diona ] #Starlight
           inverted: true
         - !type:ReagentCondition
           reagent: Ammonia
@@ -267,7 +321,7 @@
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Rat ]
+          type: [ Rat, Diona ] #Starlight
         - !type:ReagentCondition
           reagent: Ammonia
           min: 1
@@ -314,3 +368,12 @@
         damage:
           types:
             Caustic: 1
+    Medicine: #Starlight
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Plant ]
+        damage:
+          types:
+            Slash: -2
