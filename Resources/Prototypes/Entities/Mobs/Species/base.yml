@@ -24,17 +24,21 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: ["enum.HumanoidVisualLayers.LHand"] #Starlight
+    - map: ["enum.HumanoidVisualLayers.RHand"] #Starlight
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: ["enum.HumanoidVisualLayers.LFoot"] #Starlight
+    - map: ["enum.HumanoidVisualLayers.RFoot"] #Starlight
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     - map: ["jumpsuit"]
-    - map: ["enum.HumanoidVisualLayers.LFoot"]
-    - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: ["enum.HumanoidVisualLayers.LHand"]
-    - map: ["enum.HumanoidVisualLayers.RHand"]
+    #- map: ["enum.HumanoidVisualLayers.LFoot"] #Starlight
+    #- map: ["enum.HumanoidVisualLayers.RFoot"] #Starlight
+    #- map: ["enum.HumanoidVisualLayers.LHand"] #Starlight
+    #- map: ["enum.HumanoidVisualLayers.RHand"] #Starlight
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
