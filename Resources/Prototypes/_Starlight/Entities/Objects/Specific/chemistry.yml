@@ -1,6 +1,6 @@
 - type: entity
   name: golden beaker
-  parent: LargeBeaker
+  parent: Beaker
   description: Used to contain a gigantic amount of chemicals and solutions.
   id: GoldenBeaker
   components:
@@ -40,9 +40,9 @@
     sprite: _Starlight/Objects/Specific/Chemistry/goldenjug.rsi
   - type: Item
     sprite: _Starlight/Objects/Specific/Chemistry/goldenjug.rsi
-    size: Huge
+    size: Normal
     shape:
-    - 0,0,3,3
+    - 0,0,3,1
   - type: PhysicalComposition
     materialComposition:
       Gold: 13
@@ -57,9 +57,9 @@
     sprite: _Starlight/Objects/Specific/Chemistry/silverjug.rsi
   - type: Item
     sprite: _Starlight/Objects/Specific/Chemistry/silverjug.rsi
-    size: Large
+    size: Normal
     shape:
-    - 0,0,3,2
+    - 0,0,2,1
   - type: PhysicalComposition
     materialComposition:
       Silver: 13
@@ -129,7 +129,7 @@
 
 - type: entity
   name: silver beaker
-  parent: LargeBeaker
+  parent: Beaker
   description: Used to contain a huge amount of chemicals and solutions.
   id: SilverBeaker
   components:
@@ -174,9 +174,6 @@
         visible: false
   - type: Item
     sprite: _Starlight/Objects/Specific/Chemistry/lightbeaker.rsi
-    size: Normal
-    shape:
-    - 0,0,1,1
   - type: Spillable
     solution: beaker
   - type: StaticPrice
@@ -223,9 +220,6 @@
         visible: false
   - type: Item
     sprite: _Starlight/Objects/Specific/Chemistry/darkbeaker.rsi
-    size: Normal
-    shape:
-    - 0,0,1,1
   - type: Spillable
     solution: beaker
   - type: StaticPrice
