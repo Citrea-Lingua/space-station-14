@@ -1,0 +1,6 @@
+- type: entity
+  id: BluespaceBeaker
+  components:
+    - type: Solution
+      solution:
+        maxVol: 1200
