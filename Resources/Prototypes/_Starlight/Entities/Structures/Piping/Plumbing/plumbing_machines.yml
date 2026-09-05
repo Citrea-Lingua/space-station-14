@@ -995,9 +995,11 @@
       Copper: 2
       Hydrogen: 2
       Oxygen: 0
+      Nitrogen: 0
       Sugar: 2
       Silicon: 5
       Phosphorus: 5
+      Water: 0 # Could be used to make plumbed sinks standard, in theory.
   - type: Plungeable
   - type: PlumbingOutlet
     solutionName: buffer
