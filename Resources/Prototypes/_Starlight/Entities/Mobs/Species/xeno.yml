@@ -1,0 +1,54 @@
+﻿- type: entity
+  parent: [BaseMobSpeciesOrganic, BaseSpeciesPickupableHuge]
+  id: BaseMobXeno
+  abstract: true
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - Darktongue
+    understands:
+    - GalacticCommon
+    - Darktongue
+  - type: Absorbable
+  - type: Hunger
+  - type: Icon
+    sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
+    state: xeno
+  - type: Thirst
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatXeno
+      amount: 5
+  - type: HumanoidAppearance
+    species: Xeno
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: Body
+    prototype: Xeno
+    requiredLegs: 2
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Xeno
+  - type: Vocal
+  - type: Inventory
+    speciesId: Xeno
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobXenoDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: Xeno
+  - type: Body
+    prototype: Xeno
+  - type: Inventory
+    speciesId: Xeno
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

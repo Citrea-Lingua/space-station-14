@@ -43,7 +43,6 @@
   name: species-name-rodentia
   text: "/ServerInfo/_Starlight/Guidebook/Mobs/Rodentia.xml"
 
-
 - type: guideEntry
   id: Doll
   name: species-name-doll
@@ -73,3 +72,8 @@
   - NeoResomi
   - NeoVox
   - NeoVulpkanin
+
+- type: guideEntry
+  id: Xeno
+  name: species-name-xeno
+  text: "/ServerInfo/_Starlight/Guidebook/Mobs/Xeno.xml"

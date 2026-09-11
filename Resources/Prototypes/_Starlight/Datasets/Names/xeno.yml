@@ -1,0 +1,17 @@
+- type: localizedDataset
+  id: NamesFirstXenoMale
+  values:
+    prefix: names-first-xeno-male-dataset-
+    count: 1
+
+- type: localizedDataset
+  id: NamesFirstXenoFemale
+  values:
+    prefix: names-first-xeno-female-dataset-
+    count: 1
+
+- type: localizedDataset
+  id: NamesLastXeno
+  values:
+    prefix: names-last-xeno-dataset-
+    count: 1
