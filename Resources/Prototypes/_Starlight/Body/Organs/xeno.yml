@@ -121,7 +121,7 @@
     heldPrefix: lungs
   - type: Lung
   - type: Metabolizer
-    metabolizerTypes: [ Human ]
+    metabolizerTypes: [ Xeno, Human ]
     stages: [ Respiration ]
   - type: SolutionManager
     solutions:
@@ -139,7 +139,7 @@
     state: heart-on
   - type: Metabolizer
     maxReagents: 2
-    metabolizerTypes: [ Human ]
+    metabolizerTypes: [ Xeno ]
     stages: [ Bloodstream ]
   - type: Item
     size: Small
@@ -164,7 +164,7 @@
   - type: Stomach
   - type: Metabolizer
     maxReagents: 3
-    metabolizerTypes: [ Human ]
+    metabolizerTypes: [ Xeno, Animal ]
     stages: [ Digestion ]
 
 - type: entity
@@ -180,7 +180,7 @@
     heldPrefix: liver
   - type: Metabolizer
     maxReagents: 1
-    metabolizerTypes: [ Human ]
+    metabolizerTypes: [ Xeno ]
     stages: [ Metabolites ]
 
 - type: entity
@@ -198,4 +198,4 @@
     heldPrefix: kidneys
   - type: Metabolizer
     maxReagents: 5
-    metabolizerTypes: [ Human ]
+    metabolizerTypes: [ Xeno ]

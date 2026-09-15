@@ -34,6 +34,11 @@
   - type: Vocal
   - type: Inventory
     speciesId: Xeno
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: FluorosulfuricAcid
+        Quantity: 600
 
 - type: entity
   parent: BaseSpeciesDummy

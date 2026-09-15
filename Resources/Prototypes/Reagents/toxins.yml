@@ -282,11 +282,23 @@
       methods: [ Touch ]
       effects:
       - !type:HealthChange
+      #Starlight Start
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Xeno ]
+          inverted: true
+      #Starlight End
         ignoreResistances: false
         damage:
           types:
             Caustic: 0.3
       - !type:Emote
+      #Starlight Start
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Xeno ]
+          inverted: true
+      #Starlight End
         emote: Scream
         probability: 0.2
   metabolisms:
@@ -294,15 +306,42 @@
       metabolismRate: 3.00 # High damage, high metabolism rate. You need a lot of units to crit. Simulates acid burning through you fast.
       effects:
       - !type:HealthChange
+      #Starlight Start
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Xeno ]
+          inverted: true
+      #Starlight End
         damage:
           types:
             Caustic: 8
+      #Starlight Start
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Xeno ]
+        damage:
+          types:
+            Bloodloss: -1
+      #Starlight End
       - !type:PopupMessage
+      #Starlight Start
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Xeno ]
+          inverted: true
+      #Starlight End
         type: Local
         visualType: Large
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
       - !type:Emote
+      #Starlight Start
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Xeno ]
+          inverted: true
+      #Starlight End
         emote: Scream
         probability: 0.25
       # Starlight-Start: Cyclorite Metabolism
@@ -342,6 +381,12 @@
       methods: [ Touch ]
       effects:
       - !type:HealthChange
+      #Starlight Start
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Xeno ]
+          inverted: true
+      #Starlight End
         ignoreResistances: false
         damage:
           types:
@@ -354,15 +399,42 @@
       metabolismRate: 3.00 # Okay damage, high metabolism rate. You need a lot of units to crit. Simulates acid burning through you fast.
       effects:
       - !type:HealthChange
+      #Starlight Start
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Xeno ]
+          inverted: true
+      #Starlight End
         damage:
           types:
             Caustic: 5
+      #Starlight Start
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Xeno ]
+        damage:
+          types:
+            Bloodloss: -0.5
+      #Starlight End
       - !type:PopupMessage
+      #Starlight Start
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Xeno ]
+          inverted: true
+      #Starlight End
         type: Local
         visualType: Large
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
       - !type:Emote
+      #Starlight Start
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Xeno ]
+          inverted: true
+      #Starlight End
         emote: Scream
         probability: 0.2
       # Starlight-Start: Cyclorite Metabolism
