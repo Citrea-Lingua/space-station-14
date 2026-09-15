@@ -64,17 +64,13 @@
   components:
   - type: Sprite
     layers:
-      - state: eyeball-l
-      - state: eyeball-r
+      - state: eyes
   - type: Item
     size: Small
-    heldPrefix: eyeballs
   - type: OrganVisualization
     layer: Eyes
-    # 🌟Starlight🌟 start
     prototypes:
       Default: MobXenoEyes
-    # 🌟Starlight🌟 end
 
 - type: entity
   id: OrganXenoTongue
@@ -125,7 +121,7 @@
     heldPrefix: lungs
   - type: Lung
   - type: Metabolizer
-    metabolizerTypes: [ Xeno ]
+    metabolizerTypes: [ Human ]
     stages: [ Respiration ]
   - type: SolutionManager
     solutions:
@@ -141,12 +137,9 @@
   components:
   - type: Sprite
     state: heart-on
-  # The heart 'metabolizes' medicines and poisons that aren't filtered out by other organs.
-  # This is done because these chemicals need to have some effect even if they aren't being filtered out of your body.
-  # You're technically 'immune to poison' without a heart, but.. uhh, you'll have bigger problems on your hands.
   - type: Metabolizer
     maxReagents: 2
-    metabolizerTypes: [Human]
+    metabolizerTypes: [ Human ]
     stages: [ Bloodstream ]
   - type: Item
     size: Small
@@ -169,13 +162,9 @@
     - SolutionOrganFoodMeatXeno
     - SolutionOrganStomach50
   - type: Stomach
-  # The stomach metabolizes stuff like foods and drinks.
-  # TODO: Have it work off of the ent's solution container, and move this
-  # to intestines instead.
   - type: Metabolizer
-    # mm yummy
     maxReagents: 3
-    metabolizerTypes: [Human]
+    metabolizerTypes: [ Human ]
     stages: [ Digestion ]
 
 - type: entity
@@ -189,9 +178,9 @@
   - type: Item
     size: Small
     heldPrefix: liver
-  - type: Metabolizer # The liver metabolizes certain chemicals only, like alcohol.
+  - type: Metabolizer
     maxReagents: 1
-    metabolizerTypes: [Human]
+    metabolizerTypes: [ Human ]
     stages: [ Metabolites ]
 
 - type: entity
@@ -207,7 +196,6 @@
   - type: Item
     size: Small
     heldPrefix: kidneys
-  # The kidneys just remove anything that doesn't currently have any metabolisms, as a stopgap.
   - type: Metabolizer
     maxReagents: 5
-    metabolizerTypes: [Human]
+    metabolizerTypes: [ Human ]

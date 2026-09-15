@@ -340,3 +340,8 @@
   flatReductions:
     Blunt: 8
     Heat: 6
+
+- type: damageModifierSet
+  id: Xeno
+  coefficients:
+    Heat: 2.0

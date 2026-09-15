@@ -171,5 +171,5 @@
 - type: humanoidBaseSprite
   id: MobXenoEyes
   baseSprite:
-    sprite: _Starlight/Mobs/Species/Xeno/parts/eyes.rsi
+    sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
     state: eyes

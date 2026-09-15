@@ -19,10 +19,10 @@
   components:
     - type: Sprite
       sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
-      state: "torso"
+      state: "torso_f"
     - type: Icon
       sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
-      state: "torso"
+      state: "torso_f"
     - type: Extractable
       juiceSolution:
         reagents:
@@ -38,10 +38,10 @@
   components:
     - type: Sprite
       sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
-      state: "head"
+      state: "head_f"
     - type: Icon
       sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
-      state: "head"
+      state: "head_f"
     - type: Extractable
       juiceSolution:
         reagents:
