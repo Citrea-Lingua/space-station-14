@@ -344,4 +344,4 @@
 - type: damageModifierSet
   id: Xeno
   coefficients:
-    Heat: 2.0
+    Caustic: 0.9

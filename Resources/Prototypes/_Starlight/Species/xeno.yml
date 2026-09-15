@@ -11,7 +11,7 @@
   maleFirstNames: NamesFirstXenoMale
   femaleFirstNames: NamesFirstXenoFemale
   lastNames: NamesLastXeno
-  naming: FirstLast
+  naming: Serial
   customName: true
   roundstartCyberwareCapacity: 0
   minAge: 20
@@ -38,6 +38,7 @@
     RLeg: MobXenoRLeg
     LFoot: MobXenoLFoot
     RFoot: MobXenoRFoot
+    Tail: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobXenoMarkingLimits
