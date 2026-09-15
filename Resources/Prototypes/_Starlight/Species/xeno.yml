@@ -2,7 +2,7 @@
   id: Xeno
   name: species-name-xeno
   roundStart: true
-  prototype: MobXeno
+  prototype: MobXenoSpecies
   sprites: MobXenoSprites
   markingLimits: MobXenoMarkingLimits
   dollPrototype: AppearanceXeno
@@ -87,37 +87,37 @@
   id: MobXenoHead
   baseSprite:
     sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
-    state: head
+    state: head_f
 
 - type: humanoidBaseSprite
   id: MobXenoHeadMale
   baseSprite:
     sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
-    state: head
+    state: head_m
 
 - type: humanoidBaseSprite
   id: MobXenoHeadFemale
   baseSprite:
     sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
-    state: head
+    state: head_f
 
 - type: humanoidBaseSprite
   id: MobXenoTorso
   baseSprite:
     sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
-    state: torso
+    state: torso_f
 
 - type: humanoidBaseSprite
   id: MobXenoTorsoMale
   baseSprite:
     sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
-    state: torso
+    state: torso_m
 
 - type: humanoidBaseSprite
   id: MobXenoTorsoFemale
   baseSprite:
     sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
-    state: torso
+    state: torso_f
 
 - type: humanoidBaseSprite
   id: MobXenoLLeg
@@ -166,3 +166,10 @@
   baseSprite:
     sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
     state: r_foot
+
+# Organs
+- type: humanoidBaseSprite
+  id: MobXenoEyes
+  baseSprite:
+    sprite: _Starlight/Mobs/Species/Xeno/parts/eyes.rsi
+    state: eyes

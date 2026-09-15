@@ -86,7 +86,7 @@
     sounds:
       Male: MaleXeno
       Female: FemaleXeno
-      Unsexed: MaleXeno
+      Unsexed: FemaleXeno
   - type: Sprite
     state: tongue
 

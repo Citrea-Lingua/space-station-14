@@ -2,7 +2,7 @@
   # Xeno
 
   <Box>
-    <GuideEntityEmbed Entity="MobXeno" Caption=""/>
+    <GuideEntityEmbed Entity="MobXenoSpecies" Caption=""/>
   </Box>
 
 </Document>
