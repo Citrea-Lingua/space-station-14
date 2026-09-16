@@ -344,4 +344,5 @@
 - type: damageModifierSet
   id: Xeno
   coefficients:
-    Caustic: 0.9
+    Caustic: 0.8
+    Shock: 1.3
