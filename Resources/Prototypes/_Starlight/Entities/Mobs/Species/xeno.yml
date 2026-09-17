@@ -6,8 +6,10 @@
   - type: LanguageKnowledge
     speaks:
     - GalacticCommon
+    - Xeno
     understands:
     - GalacticCommon
+    - Xeno
   - type: Speech
     speechVerb: Xeno
     speechSounds: UnisexXeno
