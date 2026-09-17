@@ -15,9 +15,12 @@
   customName: true
   roundstartCyberwareCapacity: 0
   minAge: 20
-  youngAge: 30
-  oldAge: 50
-  maxAge: 70
+  youngAge: 100
+  oldAge: 300
+  maxAge: 400
+  standardSize: 170
+  standardWeight: 80
+  standardDensity: 110
 
 - type: speciesBaseSprites
   id: MobXenoSprites

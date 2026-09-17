@@ -79,12 +79,20 @@
   description: "A fleshy muscle mostly used for lying."
   components:
   - type: OrganTongue
+    allowedEmotes: [ "Hisses", "Purr", "Growl", "Scree" ]
     sounds:
-      Male: MaleXeno
-      Female: FemaleXeno
-      Unsexed: FemaleXeno
+      Male: UnisexXeno
+      Female: UnisexXeno
+      Unsexed: UnisexXeno
   - type: Sprite
     state: tongue
+  - type: MeleeWeapon
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 5
 
 - type: entity
   id: OrganXenoAppendix

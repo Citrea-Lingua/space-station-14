@@ -78,3 +78,11 @@
   id: OnGrid
   rules:
     - !type:OnGridRule
+
+- type: soundCollection
+  id: LowHiss
+  files:
+    - /Audio/Voice/Misc/lowHiss1.ogg
+    - /Audio/Voice/Misc/lowHiss2.ogg
+    - /Audio/Voice/Misc/lowHiss3.ogg
+    - /Audio/Voice/Misc/lowHiss4.ogg

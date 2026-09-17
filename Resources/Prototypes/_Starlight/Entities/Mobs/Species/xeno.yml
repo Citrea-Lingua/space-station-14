@@ -8,6 +8,11 @@
     - GalacticCommon
     understands:
     - GalacticCommon
+  - type: Speech
+    speechVerb: Xeno
+    speechSounds: UnisexXeno
+  - type: TypingIndicator
+    proto: alien
   - type: Absorbable
   - type: Hunger
     baseDecayRate: 0.05
@@ -39,6 +44,33 @@
       reagents:
       - ReagentId: XenoBlood
         Quantity: 600
+  - type: Puller
+    needsHands: false
+  - type: MeleeWeapon
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 5
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+      Acidic: [ Touch, Ingestion ]
+    reactions:
+    - reagents: [ Water, SpaceCleaner]
+      methods: [ Touch ]
+      effects:
+      - !type:WashCreamPie
+    - reagents: [ WeldingFuel, Phlogiston, Napalm, Benzene, Oil, Vodka, Absinthe ]
+      methods: [ Touch ]
+      effects:
+      - !type:Emote
+        emote: Hisses
+        showInChat: false
+  - type: BodyEmotes
+    soundsId: UnisexXeno
 
 - type: entity
   parent: BaseSpeciesDummy
