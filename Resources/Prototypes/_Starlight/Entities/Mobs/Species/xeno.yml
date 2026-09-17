@@ -37,7 +37,7 @@
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
-      - ReagentId: FluorosulfuricAcid
+      - ReagentId: XenoBlood
         Quantity: 600
 
 - type: entity
