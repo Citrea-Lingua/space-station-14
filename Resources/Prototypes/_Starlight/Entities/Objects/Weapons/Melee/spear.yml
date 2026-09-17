@@ -17,3 +17,52 @@
     damage:
       types:
         Piercing: 25
+
+
+- type: entity
+  name: xeno tail
+  parent: [BaseItem, SolutionDart]
+  id: XenoTailSpear
+  description: Your trusty tail. Sharp, and good for stabbing things with!
+  components:
+  - type: Tool
+    qualities:
+    - Slicing
+  - type: Tag
+    tags:
+    - Spear
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/spear.rsi
+    layers:
+    - state: spear
+    - state: spear1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    range: 2.0
+    damage:
+      types:
+        Piercing: 12
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Ginormous
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 2
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: spear
+    inHandsFillBaseName: -fill-
+    inHandsMaxFillLevels: 1
+    equippedFillBaseName: -fill-
+    equippedMaxFillLevels: 1

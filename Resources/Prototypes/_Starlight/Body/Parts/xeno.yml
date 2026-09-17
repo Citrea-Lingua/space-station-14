@@ -32,7 +32,7 @@
           Quantity: 20
     - type: LimbItemStorage
       items:
-        - SpearSharkMinnow
+        - XenoTailSpear
     - type: LimbItemDeployer
       isCybernetic: false
       action: ActionToggleXenoTail
