@@ -30,6 +30,17 @@
           Quantity: 10
         - ReagentId: FluorosulfuricAcid
           Quantity: 20
+    - type: LimbItemStorage
+      items:
+        - SpearSharkMinnow
+    - type: LimbItemDeployer
+      isCybernetic: false
+      action: ActionToggleXenoTail
+      sound:
+        path: /Audio/Voice/Vox/vox_click.ogg
+      handWhitelist:
+        tags:
+          - Spear
 
 - type: entity
   id: HeadXeno

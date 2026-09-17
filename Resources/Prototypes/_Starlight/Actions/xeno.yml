@@ -1,0 +1,13 @@
+- type: entity
+  id: ActionToggleXenoTail
+  name: Toggle Tail
+  description: Ready or Unready your tail for combat
+  components:
+    - type: Action
+      useDelay: 1
+      icon:
+        sprite: _Starlight/Interface/Actions/actions_doll.rsi
+        state: break_shell
+      itemIconStyle: BigAction
+    - type: InstantAction
+      event: !type:ToggleLimbEvent
