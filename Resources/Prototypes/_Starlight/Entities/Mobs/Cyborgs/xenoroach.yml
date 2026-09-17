@@ -126,6 +126,7 @@
     - Grumbakul
     - Aielic
     - Lagomorphian
+    - Xeno
   # Surveillance - Mothership Core can watch through it
   - type: SurveillanceCamera
     networkSet: true

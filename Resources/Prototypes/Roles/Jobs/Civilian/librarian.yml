@@ -40,6 +40,7 @@
       - Darktongue
       - Lagomorphian
       - Squeakish
+      - Xeno
       understands:
       - GalacticCommon
       - Scratch
@@ -62,6 +63,7 @@
       - Darktongue
       - Lagomorphian
       - Squeakish
+      - Xeno
   # Starlight end
 
 - type: startingGear

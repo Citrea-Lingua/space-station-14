@@ -41,5 +41,11 @@ chat-speech-verb-rodentia-2 = pieps
 chat-speech-verb-rodentia-3 = chatters
 chat-speech-verb-rodentia-4 = squeals
 
+chat-speech-verb-name-xeno = Xeno
+chat-speech-verb-xeno-1 = hisses
+chat-speech-verb-xeno-2 = growls
+chat-speech-verb-xeno-3 = clicks
+chat-speech-verb-xeno-4 = snaps
+
 chat-speech-verb-name-pause = Pausing
 chat-speech-verb-pause = pauses

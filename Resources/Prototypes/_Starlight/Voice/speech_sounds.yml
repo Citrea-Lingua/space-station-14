@@ -97,3 +97,12 @@
   id: LagomorphStomp
   files:
     - /Audio/Voice/Reptilian/reptilian_tailthump.ogg
+
+- type: speechSounds
+  id: UnisexXeno
+  saySound:
+    path: /Audio/_Starlight/Voice/Moth/moth.ogg # TODO: Proper soundset
+  askSound:
+    path: /Audio/_Starlight/Voice/Moth/moth_ask.ogg # TODO: Proper soundset
+  exclaimSound:
+    path: /Audio/_Starlight/Voice/Moth/moth_exclaim.ogg # TODO: Proper soundset
