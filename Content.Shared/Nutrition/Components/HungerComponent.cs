@@ -138,6 +138,13 @@ public sealed partial class HungerComponent : Component
     /// A list of values to drain hunger by every update tick. Gets multiplied by decay rate.
     /// </summary>
     [ViewVariables] public readonly List<(EntityUid, float, TimeSpan?)> HungerDrains = [];
+
+    /// <summary>
+    /// A vignette to show to the player when they are starving
+    /// </summary>
+    [DataField]
+    [AutoNetworkedField]
+    public bool ApplyStarvationVignette = false;
     //Starlight end
 }
 

@@ -17,8 +17,9 @@
     proto: alien
   - type: Absorbable
   - type: Hunger
-    baseDecayRate: 0.05
+    baseDecayRate: 5.1 #very hungry, for a player species
     starvingSlowdownModifier: 1.0
+    applyStarvationVignette: true
   - type: Icon
     sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
     state: xeno
