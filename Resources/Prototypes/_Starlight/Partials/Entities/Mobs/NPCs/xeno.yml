@@ -1,0 +1,35 @@
+- type: !PartialOnly entity
+  id: MobXeno
+  components:
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents: !Remove
+      - ReagentId: FluorosulfuricAcid
+        Quantity: 1300
+
+- type: !PartialOnly entity
+  id: MobXeno
+  components:
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: XenoBlood
+        Quantity: 1300
+
+- type: !PartialOnly entity
+  id: MobXenoLonePraetorianNoGhost
+  components:
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents: !Remove
+      - ReagentId: FluorosulfuricAcid
+        Quantity: 600
+
+- type: !PartialOnly entity
+  id: MobXenoLonePraetorianNoGhost
+  components:
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: XenoBlood
+        Quantity: 600

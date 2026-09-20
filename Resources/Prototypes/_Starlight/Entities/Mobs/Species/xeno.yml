@@ -20,6 +20,12 @@
     baseDecayRate: 0.2 #very hungry, for a player species
     starvingSlowdownModifier: 1.0
     applyStarvationVignette: true
+    thresholds:
+      Overfed: 500 #Extra hunger capacity. Gorge yourself to be fine for a loong while
+      Okay: 200
+      Peckish: 100
+      Starving: 50
+      Dead: 0
   - type: Icon
     sprite: _Starlight/Mobs/Species/Xeno/parts.rsi
     state: xeno
