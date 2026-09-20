@@ -13,6 +13,7 @@
   - type: Speech
     speechVerb: Xeno
     speechSounds: UnisexXeno
+  - type: XenoSpeechAccent
   - type: TypingIndicator
     proto: alien
   - type: Absorbable
