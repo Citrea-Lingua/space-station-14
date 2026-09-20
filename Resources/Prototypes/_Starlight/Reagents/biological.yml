@@ -37,7 +37,7 @@
   group: Biological
   desc: reagent-desc-xeno-blood
   flavor: acid
-  color: "#5050ff"
+  color: "#52a258"
   recognizable: true
   physicalDesc: reagent-physical-desc-acidic
   reactiveEffects:
