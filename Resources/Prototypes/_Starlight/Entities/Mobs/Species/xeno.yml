@@ -18,7 +18,7 @@
     proto: alien
   - type: Absorbable
   - type: Hunger
-    baseDecayRate: 0.2 #very hungry, for a player species
+    baseDecayRate: 0.1 #very, *very* hungry, for a player species
     starvingSlowdownModifier: 1.0
     applyStarvationVignette: true
     thresholds:
