@@ -6,8 +6,8 @@
     - type: Action
       useDelay: 1
       icon:
-        sprite: _Starlight/Interface/Actions/actions_doll.rsi
-        state: break_shell
+        sprite: _Starlight/Interface/Actions/actions_xeno.rsi
+        state: toggle_tail
       itemIconStyle: BigAction
     - type: InstantAction
       event: !type:ToggleLimbEvent
