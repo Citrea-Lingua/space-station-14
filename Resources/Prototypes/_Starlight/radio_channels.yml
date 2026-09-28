@@ -144,3 +144,21 @@
   color: "#8f6741"
   longRange: true
   autoTranslate: Xenomind
+
+- type: radioChannel
+  id: XenoCongressRadio
+  name: language-Xeno-name
+  frequency: 77785
+  color: "#8b32ff"
+  longRange: true
+  autoTranslate: Xenocongress
+  anonymousAlias: "Individual {0}"
+
+- type: radioChannel
+  id: XenoQueenRadio
+  name: language-Xeno-name
+  frequency: 77786
+  color: "#6f00ff"
+  longRange: true
+  autoTranslate: Xenoqueen
+  anonymousAlias: "Queen {0}"

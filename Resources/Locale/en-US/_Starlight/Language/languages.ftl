@@ -148,5 +148,11 @@ language-Carpmind-description = Various fishy minds.
 language-Xenomind-name = Hivemind
 language-Xenomind-description = Various minds of xenos and terrors.
 
+language-Xenocongress-name = Xeno-Congress
+language-Xenocongress-description = The collective voices of the Xeno people, heard only by the sender and their elected Queen.
+
+language-Xenoqueen-name = Words of the Queen
+language-Xenoqueen-description = The mental voice of the elected Queen, heard by all individuals of a local hive.
+
 language-Squeakish-name = Squeakish
 language-Squeakish-description = The language of the Rodentia, made up of a series of chirps and squeaks.

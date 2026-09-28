@@ -7,9 +7,11 @@
     speaks:
     - GalacticCommon
     - Xeno
+    - Xenocongress
     understands:
     - GalacticCommon
     - Xeno
+    - Xenoqueen
   - type: Speech
     speechVerb: Xeno
     speechSounds: UnisexXeno
