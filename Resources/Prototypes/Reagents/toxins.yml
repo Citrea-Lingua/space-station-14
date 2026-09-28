@@ -819,7 +819,7 @@
       - !type:PopupMessage
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Vampire, Rodentia, Neocyte, Doll ] # SL - add Vampire, Rodentia and Doll / FH - add Neocyte
+          type: [ Animal, Vox, Vampire, Rodentia, Neocyte, Doll, Xeno ] # SL - add Vampire, Rodentia, Doll and Xeno / FH - add Neocyte
           inverted: true
         type: Local
         visualType: MediumCaution
@@ -829,12 +829,12 @@
         probability: 0.1
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Vampire, Rodentia, Neocyte, Doll ] # Starlight - add Vampire, Rodentia and Doll / FH - add Neocyte
+          type: [ Animal, Vox, Plant, Vampire, Rodentia, Neocyte, Doll, Xeno ] # Starlight - add Vampire, Rodentia, Doll and Xeno / FH - add Neocyte
           inverted: true
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Vampire, Rodentia, Neocyte, Doll ] # Starlight - add Vampire, Rodentia and Doll / FH - add Neocyte
+          type: [ Animal, Vox, Plant, Vampire, Rodentia, Neocyte, Doll, Xeno ] # Starlight - add Vampire, Rodentia, Doll and Xeno / FH - add Neocyte
           inverted: true
         damage:
           types:
@@ -861,7 +861,7 @@
       - !type:AdjustReagent
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Vampire, Rodentia, Doll ] # Starlight - add Vampire, Rodentia
+          type: [ Vampire, Rodentia, Doll, Xeno ] # Starlight - add Vampire, Rodentia, Doll and Xeno
         reagent: Protein
         amount: 0.5
       - !type:AdjustReagent #FH

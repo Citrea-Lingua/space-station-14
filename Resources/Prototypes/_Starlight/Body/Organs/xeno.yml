@@ -170,9 +170,14 @@
     - SolutionOrganFoodMeatXeno
     - SolutionOrganStomach100
   - type: Stomach
+    isSpecialDigestibleExclusive: false
+    specialDigestible:
+      tags:
+      - ClothMade
+      - Paper
   - type: Metabolizer
     maxReagents: 3
-    metabolizerTypes: [ Xeno, Animal ]
+    metabolizerTypes: [ Xeno ]
     stages: [ Digestion ]
 
 - type: entity
