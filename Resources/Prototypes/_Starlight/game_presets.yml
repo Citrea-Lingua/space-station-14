@@ -45,6 +45,7 @@
   description: shitstation-description
   showInVote: true
   minPlayers: 0
+  voteCooldown: 2
   rules:
     - ShitStationEventScheduler # It's all trash/shit/ion/derelict/minor critter event spawns. Should make the station feel sufficiently shitty.
     - BasicStationEventScheduler
@@ -68,7 +69,7 @@
   name: vampire-gamemode-title
   description: vampire-gamemode-description
   showInVote: True
-  minPlayers: 50
+  minPlayers: 20
   rules:
   - Vampire
   - SubGamemodesRuleNoVampires
@@ -86,7 +87,7 @@
   name: changeling-gamemode-title
   description: changeling-gamemode-description
   showInVote: false
-  minPlayers: 25
+  minPlayers: 20
   rules:
     - SLChangeling
     - SLChangelingLess
@@ -103,7 +104,7 @@
   name: traitorling-title
   description: traitorling-description
   showInVote: true
-  minPlayers: 50
+  minPlayers: 20
   rules:
     - SLChangeling
     - Traitor
@@ -124,7 +125,7 @@
   name: vamptraitorling-title
   description: vamptraitorling-description
   showInVote: true
-  minPlayers: 50
+  minPlayers: 25
   rules:
     - SLChangelingLess
     - TraitorLess
@@ -134,9 +135,9 @@
     - BasicRoundstartVariation
     - XenoDemocracy
 
-
 - type: gamePreset
   id: AlmostAllAtOnce
+  bypassCooldowns: true
   alias:
   - almostall
   - allnt
@@ -167,6 +168,7 @@
 
 - type: gamePreset
   id: AlmostAllerAtOnce
+  bypassCooldowns: true
   alias:
   - almostallall
   - allernt
@@ -208,6 +210,23 @@
     - XenoDemocracy
 
 - type: gamePreset
+  id: CosmicCult
+  alias:
+    - cosmic
+  name: cosmiccult-title
+  description: cosmiccult-description
+  minPlayers: 20
+  showInVote: true
+  rules:
+    - CosmicCult
+    - SubGamemodesRuleConversion
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
+    - BasicStationEventScheduler
+    - RailroadingMinor
+
+- type: gamePreset
   id: TerrorSpiders
   alias:
   - spiders
@@ -237,7 +256,7 @@
   name: dynamic-title
   showInVote: false # admin-only for now until we fix some bugs
   description: dynamic-description
-  minPlayers: 40
+  minPlayers: 20
   voteCooldown: 0 # This one actually can roll back to back.
   rules:
   - SLDynamicRuleLP

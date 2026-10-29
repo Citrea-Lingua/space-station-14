@@ -244,6 +244,25 @@
             state: facialhair
 
 - type: entity
+  parent: [BaseSpeciesDummy, BaseInventoryExperiment]
+  id: AppearanceExperiment
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: Experiment
+  - type: Body
+    prototype: Experiment
+
+- type: entity
+  id: GuideExpie
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite # here cause the eyes do not have a default coloration comp so they appear black in the quidebook
+    layers:
+      - sprite: _Starlight/Mobs/Species/Experiment/parts.rsi
+        state: full
+
+- type: entity
   parent: [BaseSpeciesDummy, BaseInventoryFemaleJumpsuit]
   id: AppearanceXeno
   categories: [ HideSpawnMenu ]

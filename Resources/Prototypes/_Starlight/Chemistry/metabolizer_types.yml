@@ -31,5 +31,9 @@
   name: metabolizer-type-doll
 
 - type: metabolizerType
+  id: Experiment
+  name: metabolizer-type-experiment
+
+- type: metabolizerType
   id: Xeno
   name: metabolizer-type-cyclorite

@@ -31,6 +31,8 @@
       - Felyaic
       - Lagomorphian
       - Squeakish
+      - ClassicalSign
+      - CygniStandard
       - Xeno
 
 - type: entity
@@ -70,6 +72,8 @@
       - Felyaic
       - Lagomorphian
       - Squeakish
+      - ClassicalSign
+      - CygniStandard
       - Xeno
 
 - type: entity
@@ -120,6 +124,8 @@
       - Squeakish
       - Xeno
       - Xenomind
+      - ClassicalSign
+      - CygniStandard
 
 - type: entity
   id: BaseXenoBorgiLanguages
@@ -159,3 +165,5 @@
       - Lagomorphian
       - Squeakish
       - Xeno
+      - ClassicalSign
+      - CygniStandard

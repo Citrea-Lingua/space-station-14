@@ -82,6 +82,7 @@
   - Medical
   metabolisms:
     Bloodstream:
+      metabolismRate: 0.25 # Starlight: ChloralHydrate is slow and weak, but active for longer.
       effects:
       - !type:Emote
         emote: Yawn
@@ -90,10 +91,10 @@
       - !type:MovementSpeedModifier
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectDrowsiness
-        time: 4
-        type: Update
+      - !type:ModifySleepiness # Starlight: ChloralHydrate can put someone to sleep, but not easily
+        effectProto: StatusEffectSleepiness
+        maximumSleepiness: 60s
+        time: 1.8 # Starlight
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition
@@ -507,6 +508,7 @@
   plantMetabolism:
   - !type:PlantAdjustMutationLevel
     amount: 1
+    mutationTable: RandomPlantMutations
   metabolisms:
     Bloodstream:
       effects:
@@ -569,8 +571,9 @@
       effects:
       - !type:HealthChange
         damage:
-          groups:
-            Airloss: 10
+          types:
+            Asphyxiation: 5
+            Bloodloss: 5
       # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
@@ -628,8 +631,8 @@
       - !type:HealthChange
         probability: 0.1
         damage:
-          groups:
-            Brute: 2
+          types:
+            Blunt: 2
       # todo: cough, sneeze
       - !type:HealthChange
         conditions:
@@ -637,10 +640,9 @@
           reagent: Histamine
           min: 45
         damage:
-          groups:
-            Brute: 2
-            Airloss: 2
           types:
+            Blunt: 2
+            Asphyxiation: 2
             Poison: 2
       - !type:PopupMessage
         type: Local
@@ -683,7 +685,10 @@
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [Animal] # Applying damage to the mobs with lower metabolism capabilities
+          type: [Animal, Avali, Experiment] # Starlight, add Avali
+        - !type:ReagentCondition # Starlight-Start prevent poisoning with Stelli Syrup
+          reagent: StellibininSyrup
+          max: 0.04 # Starlight-End
         damage:
           types:
             Poison: 0.4
@@ -691,7 +696,10 @@
         probability: 0.04 #Scaled for time, not metabolismrate.
         conditions:
           - !type:MetabolizerTypeCondition
-            type: [Animal]
+            type: [Animal, Avali, Experiment] # Starlight, add Avali
+          - !type:ReagentCondition # Starlight-Start prevent poisoning with Stelli Syrup
+            reagent: StellibininSyrup
+            max: 0.04 # Starlight-End
       # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
@@ -813,13 +821,14 @@
   physicalDesc: reagent-physical-desc-clumpy
   flavor: bitter
   color: "#FFFFE5"
+  # Starlight/Moff: Keep these edits inline until indexed reagent partials validate.
   metabolisms:
     Bloodstream:
       effects:
       - !type:PopupMessage
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Vampire, Rodentia, Neocyte, Doll, Xeno ] # SL - add Vampire, Rodentia, Doll and Xeno / FH - add Neocyte
+          type: [ Animal, Vox, Bloodsucker, Vampire, Avali, Rodentia, Neocyte, Doll, Experiment, Xeno ] # Starlight/FH/Moff
           inverted: true
         type: Local
         visualType: MediumCaution
@@ -829,12 +838,12 @@
         probability: 0.1
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Vampire, Rodentia, Neocyte, Doll, Xeno ] # Starlight - add Vampire, Rodentia, Doll and Xeno / FH - add Neocyte
+          type: [ Animal, Vox, Plant, Bloodsucker, Vampire, Avali, Rodentia, Neocyte, Doll, Experiment, Xeno ] # Starlight/FH/Moff
           inverted: true
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Vampire, Rodentia, Neocyte, Doll, Xeno ] # Starlight - add Vampire, Rodentia, Doll and Xeno / FH - add Neocyte
+          type: [ Animal, Vox, Plant, Bloodsucker, Vampire, Avali, Rodentia, Neocyte, Doll, Experiment, Xeno ] # Starlight/FH/Moff
           inverted: true
         damage:
           types:
@@ -849,7 +858,7 @@
       - !type:AdjustReagent
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal ]
+          type: [ Animal, Bloodsucker, Vampire, Avali, Rodentia, Neocyte, Doll, Experiment ] # Starlight/FH/Moff
         reagent: Protein
         amount: 0.5
       - !type:AdjustReagent
@@ -858,20 +867,7 @@
           type: [ Vox ]
         reagent: Protein
         amount: 0.25
-      - !type:AdjustReagent
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Vampire, Rodentia, Doll, Xeno ] # Starlight - add Vampire, Rodentia, Doll and Xeno
-        reagent: Protein
-        amount: 0.5
-      - !type:AdjustReagent #FH
-        conditions: #FH
-        - !type:MetabolizerTypeCondition #FH
-          type: [ Neocyte ] # FH + Starlight
-        reagent: Protein #FH
-        amount: 0.5 #FH
-      # Starlight Start
-      # Cyclorite Metabolism
+      # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -881,7 +877,7 @@
           type: [ Cyclorite ]
         reagent: UncookedAnimalProteins
         amount: 0.25
-        # Starlight-End
+      # Starlight-End
 
 - type: reagent
   id: Allicin
@@ -901,7 +897,7 @@
           reagent: Allicin
           min: 1
         - !type:MetabolizerTypeCondition
-          type: [Animal]
+          type: [Animal, Experiment]
         damage:
           types:
             Poison: 0.06
@@ -1053,8 +1049,9 @@
   flavor: medicine
   color: "#435166"
   plantMetabolism:
-  - !type:PlantMutateChemicals
-    randomPickBotanyReagent: EvilRandomFillSolution
+  - !type:PlantAdjustMutationLevel
+    amount: 1
+    mutationTable: EvilPlantMutations
   - !type:PlantAdjustToxins
     amount: 10
   metabolisms:
@@ -1070,8 +1067,9 @@
         sprintSpeedModifier: 0.8
       - !type:HealthChange
         damage:
-          groups:
-            Airloss: 2
+          types:
+            Asphyxiation: 1
+            Bloodloss: 1
       # Starlight-Start: Cyclorite Metabolism
       - !type:AdjustReagent
         conditions:

@@ -14,6 +14,21 @@
 
 - type: entity
   parent: Solution
+  id: SolutionOrganBrain  # Solution used for reagent grinder
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: organ
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: NeuralPrion
+        Quantity: 10
+
+- type: entity
+  parent: Solution
   id: SolutionOrganNutrimentDoll
   categories: [ HideSpawnMenu ]
   components:
@@ -133,6 +148,21 @@
 
 - type: entity
   parent: Solution
+  id: SolutionOrganFoodNeuralPrion
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 15
+      reagents:
+      - ReagentId: GreyMatter
+        Quantity: 5
+      - ReagentId: NeuralPrion
+        Quantity: 10
+
+- type: entity
+  parent: Solution
   id: SolutionOrganFoodGreyMatterLarge
   categories: [ HideSpawnMenu ]
   components:
@@ -143,6 +173,7 @@
       reagents:
       - ReagentId: GreyMatter
         Quantity: 20
+
 
 - type: entity
   parent: Solution
@@ -236,8 +267,8 @@
   - type: OrganBrain
   - type: SolutionManager
     solutions:
-    - SolutionOrganNutriment
     - SolutionOrganFoodGreyMatterLarge
+    - SolutionOrganBrain
   - type: FlavorProfile
     flavors:
       - people

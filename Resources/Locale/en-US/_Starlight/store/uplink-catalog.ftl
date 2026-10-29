@@ -96,11 +96,8 @@ uplink-hydra-desc = A modified Hydra capable of taking both cleanades and standa
 uplink-pizza-bomb-name = Nefarious Pizza bomb
 uplink-pizza-bomb-desc = Originally developed by covertly by DONK Co to disuade the heretics who prefer their pizza not in pocket form. This pizza box is wired, and explodes within moments of being opened.
 
-uplink-shuttle-board-name = Syndicate Shuttle Console Board
-uplink-shuttle-board-desc = A computer printed circuit board for a syndicate shuttle console.
-
 uplink-shuttle-bundle-name = Syndicate Shuttle Crate
-uplink-shuttle-bundle-desc = Everything but the shuttle board. It's a shuttle in a crate* (Some assembly required)
+uplink-shuttle-bundle-desc = Everything you need to build a shuttle (including the board!). It's a shuttle in a crate* (Some assembly required)
 
 uplink-friendship-bundle-name = Friendship Bundle
 uplink-friendship-bundle-desc = Friendship packaged in a convenient crate*. (Some assembly required)
@@ -164,3 +161,6 @@ uplink-reinforcement-radio-mothroach-desc =  Call in a trained mobroach to assis
 
 uplink-estoc-name = Estoc DMR
 uplink-estoc-desc = A designated marksman rifle, fitted with a mid-range optic for longer-range combat.
+
+uplink-plushie-linari-name = linari miun plushie
+uplink-plushie-linari-desc = An expertly crafted plush lizard in tactical officer gear, absent from the standard NanoTrasen catalogues. The stitching on the back says "Property of the Syndicate." Holding it makes you feel like you're breaking at least three corporate regulations.

@@ -6,7 +6,7 @@
   - K9Variant
   - K9OuterClothing
   - K9Eyes
-  - K9SuitStorage
+  - K9Collar
 
 - type: loadoutGroup
   id: K9Variant
@@ -81,22 +81,34 @@
   equipment:
     eyes: ClothingEyesEyepatchHudSecurity
 
-# Suit storage
+# Collar
 - type: loadoutGroup
-  id: K9SuitStorage
-  name: loadout-group-k9-suitstorage
-  minLimit: 0
-  defaultSelected: 1
+  id: K9Collar
+  name: loadout-group-k9-collar
+  minLimit: 1
+  maxLimit: 1
   loadouts:
-  - K9DoubleEmergencyOxygenTank
-  - K9ExtendedEmergencyOxygenTank
+  - K9CollarStandard
+  - K9CollarSenior
 
 - type: loadout
-  id: K9DoubleEmergencyOxygenTank
+  id: K9CollarStandard
   equipment:
-    suitstorage: DoubleEmergencyOxygenTankFilled
+    id: K9CollarPDA
 
 - type: loadout
-  id: K9ExtendedEmergencyOxygenTank
+  id: K9CollarSenior
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorK9
   equipment:
-    suitstorage: ExtendedEmergencyOxygenTankFilled
+    id: K9CollarSeniorPDA
+
+- type: loadoutEffectGroup
+  id: SeniorK9
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobK9
+      time: 20h

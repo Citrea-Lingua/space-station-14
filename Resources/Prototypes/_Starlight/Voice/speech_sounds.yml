@@ -99,6 +99,15 @@
     - /Audio/Voice/Reptilian/reptilian_tailthump.ogg
 
 - type: speechSounds
+  id: AllExpi
+  saySound:
+    path: /Audio/_Starlight/Voice/Experiment/exp_speak.ogg
+  askSound:
+    path: /Audio/_Starlight/Voice/Experiment/exp_ask.ogg
+  exclaimSound:
+    path: /Audio/_Starlight/Voice/Experiment/exp_exclaim.ogg
+
+- type: speechSounds
   id: UnisexXeno
   saySound:
     path: /Audio/_Starlight/Voice/Moth/moth.ogg # TODO: Proper soundset

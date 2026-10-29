@@ -1,6 +1,6 @@
 using System.Linq;
-using Content.Server._Starlight.Commands;
-using Content.Server._Starlight.Toolshed;
+using System.Runtime.InteropServices;
+using Content.Shared._Starlight.Commands;
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Ghost;
@@ -17,7 +17,8 @@ public sealed partial class GridCommand : ToolshedCommand
     [Dependency] private IPlayerManager _plr = default!;
 
     [CommandImplementation("getplayers")]
-    public IEnumerable<EntityUid> GetPlayersOnGrid([PipedArgument] EntityUid grid, bool excludeGhosts = false)
+    public IEnumerable<EntityUid> GetPlayersOnGrid([PipedArgument] EntityUid grid,
+        [Optional] [DefaultParameterValue(false)] bool excludeGhosts)
     {
         var sessions = _plr.Sessions.Where(session =>
             session.AttachedEntity is not null && Transform(session.AttachedEntity.Value).GridUid == grid);
@@ -27,12 +28,14 @@ public sealed partial class GridCommand : ToolshedCommand
             if (session.AttachedEntity is null) continue;
             entities.Add(session.AttachedEntity.Value);
         }
+
         if (excludeGhosts) entities.RemoveAll(HasComp<GhostComponent>);
         return entities;
     }
 
     [CommandImplementation("getplayers")]
-    public IEnumerable<EntityUid> GetPlayersOnGrids([PipedArgument] IEnumerable<EntityUid> grids, bool excludeGhosts = false) =>
+    public IEnumerable<EntityUid> GetPlayersOnGrids([PipedArgument] IEnumerable<EntityUid> grids,
+        [Optional] [DefaultParameterValue(false)] bool excludeGhosts) =>
         grids.SelectMany(x => GetPlayersOnGrid(x, excludeGhosts));
 
     [CommandImplementation("get")]

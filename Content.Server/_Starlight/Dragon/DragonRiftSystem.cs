@@ -8,6 +8,7 @@ using Content.Shared.Dragon;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Sprite;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
@@ -72,7 +73,7 @@ public sealed partial class DragonRiftSystem
                             FormattedMessage.RemoveMarkupOrThrow(_navMap.GetNearestBeaconString((uid, xform)))),
                         ("station", MetaData(closestStation.Owner).EntityName));
                     _chat.DispatchGlobalAnnouncement(msg, playSound: false, colorOverride: Color.Red);
-                    _audio.PlayGlobal("/Audio/Misc/notice1.ogg", Filter.Broadcast(), true);
+                    _audio.PlayGlobal(new ResolvedPathSpecifier("/Audio/Misc/notice1.ogg"), Filter.Broadcast(), true);
                     _navMap.SetBeaconEnabled(uid, true);
                 }
 
@@ -99,7 +100,7 @@ public sealed partial class DragonRiftSystem
                 {
 
                     var totalCrewCount = _crewCount.GetTotalCrewCount();
-                    comp.SharkMinnowLimit = totalCrewCount / 2;
+                    comp.SharkMinnowLimit = totalCrewCount / 8;
                     Dirty(uid, comp);
 
                     var canSpawnSharkminnow = true;
@@ -115,8 +116,8 @@ public sealed partial class DragonRiftSystem
                     }
 
                     var finishedMultiplier = comp.State == DragonRiftState.Finished ? 1 : 0;
-                    var rareChance = 20 * (1 + finishedMultiplier);
-                    var sharkChance = 5 * (1 + finishedMultiplier);
+                    var rareChance = 7 * (1 + finishedMultiplier); // 7 -> 14 -4 sharks so when rift is done 10%
+                    var sharkChance = 2 * (1 + finishedMultiplier);
 
                     var roll = _random.Next(1, 101);
 
@@ -131,7 +132,7 @@ public sealed partial class DragonRiftSystem
                         }
                         else
                         {
-                            spawnPrototype = new EntProtoId("RiftCarpHolo");
+                            spawnPrototype = new EntProtoId("MobCarpDragon");
                         }
                     }
                 }
@@ -160,20 +161,16 @@ public sealed partial class DragonRiftSystem
         }
     }
 
-    private void OnGetState(Entity<DragonRiftComponent> ent, ref ComponentGetState args)
+    private void OnGetState(Entity<DragonRiftComponent> ent, ref ComponentGetState args) =>
+    args.State = new DragonRiftComponentState
     {
-        args.State = new DragonRiftComponentState
-        {
-            State = ent.Comp.State,
-            SharkMinnowLimit = ent.Comp.SharkMinnowLimit,
-        };
-    }
+        State = ent.Comp.State,
+        SharkMinnowLimit = ent.Comp.SharkMinnowLimit,
+    };
 
-    private void CleanupSharkMinnows(DragonComponent dragon)
-    {
+    private void CleanupSharkMinnows(DragonComponent dragon) =>
         dragon.SharkMinnows.RemoveWhere(sharkminnow =>
             !Exists(sharkminnow) ||
             !TryComp<MobStateComponent>(sharkminnow, out var mobState) ||
             mobState.CurrentState == MobState.Dead);
-    }
 }

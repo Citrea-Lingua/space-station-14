@@ -183,6 +183,7 @@
       - id: NukiePlanetSpawn
       - id: NukiePlanetSpawnWestern
       - id: NukiePlanetSpawnGeiger
+      - id: NukiePlanetSpawnInterdyne
   # Starlight end
   # Starlight - removing the LoadMapRule from here to instead handle it in the dynamic rules above
   #- type: LoadMapRule
@@ -195,12 +196,12 @@
       proto: NukeopsMedic
     - !type:LinearAntagCount
       proto: NukeopsOperative
+      playerRatio: 14 # Starlight - 3-man team on Epsilon, 4-man team on Beta max, 6-man team on ALpha max.
       range:
         min: 1
         max: 4 # Starlight
   - type: DynamicRuleCost
     cost: 200
-    cooldown: 1 # Starlight
 
 # Starlight start
 # Such a small entry, not worth putting in its own file
@@ -210,7 +211,6 @@
   components:
   - type: DynamicRuleCost
     cost: 300
-    cooldown: 1
 # Starlight end
 
 - type: entity
@@ -266,7 +266,7 @@
   parent: [BaseGameRule, BaseRoundstartAntagRule]
   components:
   - type: GameRule
-    minPlayers: 25 # Starlight start
+    minPlayers: 20 # Starlight start
     delay: # It doesn't really make lore sense that you can "remember" you're a Changeling, but it should give everyone some calm at the start.
       min: 240
       max: 420 # Starlight end
@@ -298,7 +298,6 @@
   - type: RevolutionaryRule
   - type: SpecialLobbyContent
     music: "/Audio/_Starlight/Lobby/Liberation.ogg"
-    background: RevClown
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
     lateJoinAdditional: true # Starlight
@@ -311,7 +310,6 @@
         max: 3
   - type: DynamicRuleCost
     cost: 200
-    cooldown: 1 # Starlight
 
 - type: entity
   id: Sandbox
@@ -352,7 +350,7 @@
   id: Wizard
   components:
   - type: GameRule
-    minPlayers: 40 # Starlight
+    minPlayers: 20 # Starlight
   - type: DynamicRuleCost
     cost: 150
 
@@ -377,7 +375,6 @@
         max: 6
   - type: DynamicRuleCost
     cost: 200
-    cooldown: 1 # Starlight
 
 - type: entity
   abstract: true
@@ -413,7 +410,7 @@
   id: Xenoborgs
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 20 # Starlight
 
 # This rule makes the chosen players unable to get other antag rules, as a way to prevent metagaming job rolls.
 # Put this before antags assigned to station jobs, but after non-job antags (NukeOps/Wiz).
