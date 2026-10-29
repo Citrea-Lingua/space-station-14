@@ -97,26 +97,26 @@ public sealed partial class XenoDemocracyRuleSystem : GameRuleSystem<XenoDemocra
         }
 
         //Ranking the votes by flipping their key-value pairing into a sorted list
-        var voteRankings = new SortedList<int, EntityUid>();
+        var voteRankings = new List<KeyValuePair<int, EntityUid>>();
         foreach(KeyValuePair<EntityUid, int> entry in votes)
         {
-            voteRankings.Add(entry.Value, entry.Key);
+            voteRankings.Add(new KeyValuePair<int, EntityUid>(entry.Value, entry.Key));
         }
-
+        voteRankings = (List<KeyValuePair<int, EntityUid>>)voteRankings.OrderByDescending(v => v.Key);
         while(voteRankings.Count > 0)
         {
-            var selectedVoice = voteRankings.Last().Value;
-            voteRankings.Remove(selectedVoice.Id);
+            var selectedVoice = voteRankings.Last();
+            voteRankings.Remove(selectedVoice);
 
-            if(!TryComp(selectedVoice, out XenoDemocracyComponent? comp))
+            if(!TryComp(selectedVoice.Value, out XenoDemocracyComponent? comp))
                 continue;
-            _languageSystem.AddLanguage(selectedVoice, comp.VoiceLanguage);
-            _languageSystem.RemoveLanguage(selectedVoice, comp.NonVoiceLanguage);
+            _languageSystem.AddLanguage(selectedVoice.Value, comp.VoiceLanguage);
+            _languageSystem.RemoveLanguage(selectedVoice.Value, comp.NonVoiceLanguage);
             comp.IsVoice = true;
             rule?.HasVoice = true;
 
-            _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Xenocratic vote finished: {Identity.Entity(selectedVoice, EntityManager)} is now Voice.");
-            _antag.SendBriefing(selectedVoice, Loc.GetString("xeno-vote-voice-briefing"), Color.FromHex("#6f00ff"), _voiceElectedAlert);
+            _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Xenocratic vote finished: {Identity.Entity(selectedVoice.Value, EntityManager)} is now Voice.");
+            _antag.SendBriefing(selectedVoice.Value, Loc.GetString("xeno-vote-voice-briefing"), Color.FromHex("#6f00ff"), _voiceElectedAlert);
             break;
         }
 

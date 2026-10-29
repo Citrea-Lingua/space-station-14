@@ -311,6 +311,6 @@
   id: XenoDemocracy
   parent: BaseGameRule
   components:
-  - type: Gamerule
+  - type: GameRule
     minPlayers: 0
   - type: XenoDemocracyRule

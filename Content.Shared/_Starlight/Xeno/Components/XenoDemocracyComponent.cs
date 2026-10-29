@@ -25,9 +25,9 @@ public sealed partial class XenoDemocracyComponent : Component
     public bool IsVoice = false;
 
     [DataField]
-    public ProtoId<LanguagePrototype> NonVoiceLanguage = "XenoCongress";
+    public ProtoId<LanguagePrototype> NonVoiceLanguage = "Xenocongress";
 
     [DataField]
-    public ProtoId<LanguagePrototype> VoiceLanguage = "XenoQueen";
+    public ProtoId<LanguagePrototype> VoiceLanguage = "Xenoqueen";
 
 }

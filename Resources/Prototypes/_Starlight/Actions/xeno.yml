@@ -22,6 +22,8 @@
       icon:
         sprite: _Starlight/Interface/Actions/actions_xeno.rsi
         state: toggle_tail
+    - type: TargetAction
+      interactOnMiss: false
     - type: EntityTargetAction
       event: !type:XenoDemocracyVoteActionEvent
       whitelist:
