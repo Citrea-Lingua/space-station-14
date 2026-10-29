@@ -12,6 +12,7 @@
     - SpaceTrafficControlEventScheduler # Starlight
     - SpaceTrafficControlFriendlyEventScheduler # Starlight
     - BasicRoundstartVariation
+    - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: KesslerSyndrome
@@ -28,6 +29,7 @@
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler # Starlight
     - BasicRoundstartVariation
+    - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: AllAtOnce
@@ -58,6 +60,7 @@
     - CosmicCult #Starlight
     #- TerrorSpidersSpawn # Starlight
     - Devil # Starlight
+    - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: AllerAtOnce
@@ -103,6 +106,7 @@
     - CosmicCult # Starlight
     #- TerrorSpidersSpawn # Starlight
     - Devil # Starlight
+    - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: Extended
@@ -118,6 +122,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler # Starlight
   - BasicRoundstartVariation
+  - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: Greenshift
@@ -130,6 +135,7 @@
   rules:
   - SpaceTrafficControlFriendlyEventScheduler # Starlight
   - BasicRoundstartVariation
+  - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: Dynamic
@@ -150,6 +156,7 @@
   - SpaceTrafficControlEventScheduler # Starlight
   - BasicRoundstartVariation
   - RailroadingMinor # Starlight, railroading
+  - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: Secret
@@ -193,6 +200,7 @@
   - SpaceTrafficControlEventScheduler # Starlight
   - BasicRoundstartVariation
   - RailroadingMinor # 🌟Starlight🌟
+  - XenoDemocracy # Starlight
 
 
 - type: gamePreset
@@ -225,6 +233,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler # Starlight
   - BasicRoundstartVariation
+  - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: Revolutionary
@@ -244,6 +253,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler # Starlight
   - BasicRoundstartVariation
+  - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: Wizard
@@ -261,6 +271,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler # Starlight
   - BasicRoundstartVariation
+  - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: Xenoborgs
@@ -278,6 +289,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler # Starlight
   - BasicRoundstartVariation
+  - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: Zombie
@@ -298,6 +310,7 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler # Starlight
   - BasicRoundstartVariation
+  - XenoDemocracy # Starlight
 
 - type: gamePreset
   id: Zombieteors
@@ -316,3 +329,4 @@
   - KesslerSyndromeScheduler
   - SpaceTrafficControlEventScheduler # Starlight
   - BasicRoundstartVariation
+  - XenoDemocracy # Starlight

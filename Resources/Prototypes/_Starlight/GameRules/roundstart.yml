@@ -252,3 +252,12 @@
         tableId: UnknownShuttlesFreelanceTable
       - !type:NestedSelector
         tableId: UnknownShuttlesHostileTable
+
+# Xeno Democracy
+- type: entity
+  id: XenoDemocracy
+  parent: BaseGameRule
+  components:
+  - type: Gamerule
+    minPlayers: 0
+  - type: XenoDemocracyRule

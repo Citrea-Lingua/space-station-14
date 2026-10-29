@@ -99,6 +99,7 @@
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#52a258"
+  - type: XenoDemocracy
 
 - type: entity
   parent: BaseSpeciesDummy

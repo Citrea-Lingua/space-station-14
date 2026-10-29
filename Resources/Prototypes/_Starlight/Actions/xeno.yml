@@ -11,3 +11,19 @@
       itemIconStyle: BigAction
     - type: InstantAction
       event: !type:ToggleLimbEvent
+
+- type: entity
+  id: ActionXenoVote
+  name: Vote
+  description: Cast your vote for Voice of the Queen
+  components:
+    - type: Action
+      useDelay: 1
+      icon:
+        sprite: _Starlight/Interface/Actions/actions_xeno.rsi
+        state: toggle_tail
+    - type: EntityTargetAction
+      event: !type:XenoDemocracyVoteActionEvent
+      whitelist:
+        components:
+        - XenoDemocracy
