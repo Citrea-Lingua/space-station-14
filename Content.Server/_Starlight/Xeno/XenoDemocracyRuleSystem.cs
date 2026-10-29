@@ -102,7 +102,7 @@ public sealed partial class XenoDemocracyRuleSystem : GameRuleSystem<XenoDemocra
         {
             voteRankings.Add(new KeyValuePair<int, EntityUid>(entry.Value, entry.Key));
         }
-        voteRankings = (List<KeyValuePair<int, EntityUid>>)voteRankings.OrderByDescending(v => v.Key);
+        voteRankings = [.. voteRankings.OrderByDescending(v => v.Key)];
         while(voteRankings.Count > 0)
         {
             var selectedVoice = voteRankings.Last();
